@@ -1,39 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  font-size: 18px;
 }
-.rate {
+
+img {
+  max-width: 100%;
+}
+
+header {
+  background-color: #011827;
+  color: white;
+  padding: 1em;
+}
+
+header h1 {
+  padding: 0 0 0 130px;
+  font-weight: 700;
+  font-size: 22px;
+  width: 120px;
+  background-image: url("media/esc_logo.png");
+  background-repeat: no-repeat;
+  background-size: 120px auto;
+}
+
+@media (min-width: 600px) {
+  header h1 {
+    width: auto;
+    font-size: 40px;
+    padding-left: 140px;
+    padding-top: 30px;
+  }
+}
+
+.top-nav a{
+  display: none;
+}
+
+.top-nav a.icon {
+  float: right;
+  display: block;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-navresponsive {
+  z-index: 2;
+  background-color: #E3170A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.top-navresponsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.top-navresponsive a {
+  float: none;
+  display: block;
+  text-align: left;
+  font-size: 36px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@media (min-width: 600px) {
+
+  #symbol {
+    display: none;
+  }
+  
+  .top-nav a {
     float: left;
-    height: 46px;
-    padding: 0 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 15vw;
+  }
+  
+  .top-nav a:hover {
+    color: #8ACFE6;
+  }
+  
+  .top-nav .icon {
+    display: none;
+  }
 }
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+
+.main_background {
+  width: 100%;
+  min-height: 40vh;
+  object-fit: cover;
 }
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+
+@media (min-width: 600px) {
+  .main_background {
+    max-height: 70vh;
+  }
 }
-.rate:not(:checked) > label:before {
-    content:url(media/john_doe.png);
+
+.button {
+  display: block;
+  border-radius: 4px;
+  padding: 1em 2em;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border-width: 0;
+  font-size: 1.1rem;
 }
+
+.button.primary{
+  background-color: #E3170A;
+  color: white;
+}
+
+.button.secondary{
+  background-color: #8ACFE5;
+  color: #011827;
+}
+
+.hero-buttons{
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1em 3em;
+  position: relative;
+  top: -2em;
+}
+
+.hero-buttons .button.primary{
+  background-color: transparent;
+  color: #36769D;
+  text-decoration: underline;
+  margin: 1em 0;
+}
+
+@media (min-width: 600px){
+  .hero-buttons{
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+  }
+  .hero-buttons .button.primary{
+    background-color: #E3170A;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.reviews {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-item {
+  list-style-type: none;
+  display: none;
+}
+.review-item:first-child {
+  display: block;
+}
+.review-item figure {
+  display: grid;
+  grid-template-columns: 74px auto;
+  column-gap: 1em;
+}
+.review-item figure blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+.review-item figure figcaption {
+  grid-column: 2/3;
+}
+
+@media (min-width: 1000px) {
+  .review-list {
+    display: flex;
+  }
+  .review-item {
+    display: block;
+  }
+}
+
+.games {
+  margin: 3rem 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.games h2 {
+  text-align: center;
+}
+
+.game-list {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.game-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 360px;
+  border-radius: 4px;
+  margin: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+}
+.game-item .game-title,
+.game-item .game-description,
+.game-item .game-meta,
+.game-item .button {
+  margin: 0.5rem;
+}
+
+.game-item .game-image {
+  grid-column: span 2;
+}
+
+.game-item .game-title {
+  grid-column: span 2;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 0.8em;
+  margin-bottom: 0;
+}
+
+.game-item .game-meta {
+  text-align: right;
+}
+
+.game-item .game-description {
+  grid-column: span 2;
+}
+
+.game-item .button {
+  grid-column: 2/3;
+  font-size: 0.7em;
+  padding: 1em;
+}
+
+.games-buttons {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1em 3em;
+  margin: 4rem 3rem;
+}
+
+.games-buttons .button.primary {
+  background-color: transparent;
+  color: #36769D;
+  text-decoration: underline;
+  margin: 1em 0;
+}
+
+.rate{
+  direction: rtl;
+}
+
+.rate:not(:checked)> input {
+  position:absolute;
+  top:-9999px;
+}
+
+.rate:not(:checked)> label {
+  text-align: left;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.rate:not(:checked)> label:before {
+  content: url(media/star_unfilled.png);
+}
+
 .rate > input:checked ~ label {
-    color: #ffc700;    
+  content: url(media/star_filled.png);
 }
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+
+@media (min-width: 600px) {
+  .games-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+  }
+  .games-buttons .button.primary {
+    background-color: #E3170A;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+  }
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #011827;
+  color: white;
+  padding: 3rem 1rem;
+}
+
+.history p {
+  max-width: 26rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.history .button {
+  border: 2px solid #8ACFE5;
+  color: #8ACFE5;
+  background-color: transparent;
+}
+
+.commercial {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commercial .sell-point {
+  margin: 0 0 2rem;
+}
+
+.commercial .sell-point .sell-point-image {
+  object-fit: cover;
+}
+
+.commercial .sell-point .sell-point-title,
+.commercial .sell-point .info-text,
+.commercial .sell-point .button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.commercial .sell-point .button {
+  margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+  .commercial .sell-point {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .commercial .sell-point .button {
+    margin-top: 0;
+    font-size: 0.8rem;
+  }
+  .commercial .sell-point .sell-point-image {
+    max-width: 50%;
+  }
+  .commercial .sell-point .info-text{
+    padding: 2rem;
+  }
+  .commercial .sell-point:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+footer {
+  background-color: #011827;
+  color: white;
+  padding: 1rem 1rem 3rem;
+}
+
+footer h2 {
+  font-size: 1.2em;
+  margin: 2em 0 0.3em;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .nav-link {
+  margin-top: 1em;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #8ACFE5;
+}
+
+@media (min-width: 1000px) {
+  footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    font-size: 0.7rem;
+  }
+  footer .footer-info {
+    grid-column: 2/7;
+  }
+  footer .nav-footer {
+    grid-column: 8/10;
+  }
+  footer .nav-social {
+    grid-column: 10/12;
+  }
 }

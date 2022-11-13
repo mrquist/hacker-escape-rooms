@@ -1,66 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>[Esc] Hacker Escape Rooms</title>
-    <meta name="Description" content="[Esc] Hacker Escape Rooms is a company that offers a meeting place where groups of friends or colleagues can come for team-building exercises with a hacker theme." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" type="text/css" rel="stylesheet" />
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <img src="media/esc_logo.png" alt="ESC Logotype" class="logo">
-      <h1>Hacker Escape Rooms</h1>
-        <nav>
-            <a title="Play online">Play online</a>
-            <a title="Play on-site">Play on-site</a>
-            <a title="The story">The story</a>
-            <a title="Contact us">Contact us</a>
-        </nav>
-        <img src="media/hacker_background_large.png" class="main_background">
-        <button class="online-btn">Online challenges</button>
-        <button class="on-site-btn">On-site challenges</button>      
-    </header>
-    <main>
-      <div class="review">
-        <img src="media/john_doe.png" alt="John Doe">
-            <q>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</q>
-            <small>John Doe, visited us in September 2021</small>
+<head>
+  <meta charset="UTF-8" />
+  <title>[Esc] Hacker Escape Rooms</title>
+  <meta name="Description"
+    content="[Esc] Hacker Escape Rooms is a company that offers a meeting place where groups of friends or colleagues can come for team-building exercises with a hacker theme." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Hacker Escape Rooms</h1>
+  </header>
+  <main>
+    <nav class="top-nav" id="escapeTopnav">
+      <a href="" title="Play online">Play online</a>
+      <a href="" title="Play on-site">Play on-site</a>
+      <a href="" htitle="The story">The story</a>
+      <a href="" title="Contact us">Contact us</a>
+      <a href="javascript:void(0);" class="icon" onclick="collapseNav()">
+        <i class="fa fa-bars" id="symbol"></i>
+      </a>
+    </nav>
+    <section class="hero">
+      <img src="media/hacker_background_large.png" alt="Image of hacker" class="main_background">
+      <div class="hero-buttons">
+        <a class="button primary" href="">Online games</a>
+        <a class="button secondary" href="">On-site games</a>
       </div>
-      <div class="review">
-        <img src="media/john_doe.png" alt="John Doe">
-            <q>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</q>
-            <small>John Doe, visited us in September 2021</small>
-      </div>
-      <h2>Popular challenges right now</h2>
-      <div >
-        <img src="media/hacker_rounded_corners.png">
-        <h3>Title of room (on-site)</h3>
-        <div class="raiting">
-          <div class="rate">
-            <input type="radio" id="star5" name="rate" value="5"/>
-            <label for="star5" title="text">5 stars</label>
-            <input type="radio" id="star4" name="rate" value="4" checked/>
-            <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label for="star1" title="text">1 star</label>
-            <small class="participants">2-6 participants</small>
-            <small>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</small>
-            <button class="book-btn">Book this room</button>
-          </div>
+    </section>
+    <section class="reviews">
+      <ul class="review-list">
+        <li class="review-item">
+          <figure>
+            <img src="media/john_doe.png" alt="John Doe">
+            <blockquote>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</blockquote>
+            <figcaption>John Doe, visited us in September 2021</figcaption>
+        </figure>
+        </li>
+        <li class="review-item">
+          <figure>
+            <img src="media/john_doe.png" alt="John Doe">
+            <blockquote>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</blockquote>
+            <figcaption>John Doe, visited us in September 2021</figcaption>
+        </figure>
+        </li>
+      </ul>
+    </section>
+  <section class="games">
+    <h2>Popular games right now</h2>
+    <ul class="game-list">
+      <li class="game-item">
+        <img src="media/hacker_background_large.png" img class="game-image" alt="Image of hacker">
+        <h3 class="game-title">Title of room (on-site)</h3>
+        <div class="rate">
+          <input type="radio" id="star5_raiting1" name="rate-1" value="5" /><label for="star5_raiting1"></label>
+          <input type="radio" id="star4_raiting1" name="rate-1" value="4" checked /><label for="star4_raiting1"></label>
+          <input type="radio" id="star3_raiting1" name="rate-1" value="3" /><label for="star3_raiting1"></label>
+          <input type="radio" id="star2_raiting1" name="rate-1" value="2" /><label for="star2_raiting1"></label>
+          <input type="radio" id="star1_raiting1" name="rate-1" value="1" /><label for="star1_raiting1"></label>
         </div>
-        <button class="online-btn">Online challenges</button>
-        <button class="on-site-btn">On-site challenges</button>      
+        <small class="game-meta">2-6 participants</small>
+        <p class="game-description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
+        <button class="button primary">Book this room</button>
+      </li>
+      <li class="game-item">
+        <img src="media/hacker_background_large.png" img class="game-image" alt="Image of hacker">
+        <h3 class="game-title">Title of room (on-site)</h3>
+        <div class="rate">
+          <input type="radio" id="star5_raiting2" name="rate-2" value="5" /><label for="star5_raiting2"></label>
+          <input type="radio" id="star4_raiting2" name="rate-2" value="4" checked /><label for="star4_raiting2"></label>
+          <input type="radio" id="star3_raiting2" name="rate-2" value="3" /><label for="star3_raiting2"></label>
+          <input type="radio" id="star2_raiting2" name="rate-2" value="2" /><label for="star2_raiting2"></label>
+          <input type="radio" id="star1_raiting2" name="rate-2" value="1" /><label for="star1_raiting2"></label>
+        </div>
+        <small class="game-meta">2-6 participants</small>
+        <p class="game-description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
+        <button class="button primary">Book this room</button>
+      </li>
+      <li class="game-item">
+        <img src="media/hacker_background_large.png" img class="game-image" alt="Image of hacker">
+        <h3 class="game-title">Title of room (on-site)</h3>
+        <div class="rate">
+          <input type="radio" id="star5_raiting3" name="rate-3" value="5" /><label for="star5_raiting3"></label>
+          <input type="radio" id="star4_raiting3" name="rate-3" value="4" checked /><label for="star4_raiting3"></label>
+          <input type="radio" id="star3_raiting3" name="rate-3" value="3" /><label for="star3_raiting3"></label>
+          <input type="radio" id="star2_raiting3" name="rate-3" value="2" /><label for="star2_raiting3"></label>
+          <input type="radio" id="star1_raiting3" name="rate-3" value="1" /><label for="star1_raiting3"></label>
+        </div>
+        <small class="game-meta">2-6 participants</small>
+        <p class="game-description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
+        <button class="button primary">Book this room</button>
+      </li>
+    </ul>
+    <div class="games-buttons">
+      <a class="button primary" href="">Online games</a>
+      <a class="button secondary" href="">On-site games</a>
     </div>
-    </main>
-    <footer>
-    </footer>
- </body>
+    </section>
+    <section class="history">
+      <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
+      <a class="button primary">Read the full story</a>
+    </section>
+    <section class="commercial">
+      <div class="sell-point">
+        <img src="media/escape_room_players.png" class="sell-point-image" alt="Two Escape Rooms players in front of cumputer">
+        <div class="info">
+          <h2 class="sell-point-title">Play with your friends or build your team stronger at work</h2>
+          <p class="info-text">
+            Praeterea, ex culpa non invenies unum aut non accusatis unum. Et
+            nihil inuitam. Nemo nocere tibi erit,
+            et non inimicos, et</p>
+          <button class="button primary">Book on-site today</button>
+        </div>
+      </div>
+      <div class="sell-point">
+        <img src="media/escape_room_player.png" class="sell-point-image" alt="Escape Room player in front of cumputer">
+        <div class="info">
+          <h2>Play online or visit our venue for one of our 25 escape rooms</h2>
+          <p class="info-text">
+            Praeterea, ex culpa non invenies unum aut non accusatis unum. Et
+            nihil inuitam. Nemo nocere tibi erit,
+            et non inimicos, et</p>
+          <button class="button primary">Book on-site today</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-info">
+      <h2>[Esc] Hacker Escape Rooms</h2>
+      <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos omnino
+        desit illud quo solo felicitatis libertatisque perficiuntur.
+      </p>
+    </div>
+    <div class="nav-footer">
+      <h2>Site map</h2> 
+      <nav>
+        <a class="nav-link" href="" title="The story">The story</a>
+        <a class="nav-link" href="" title="Contact us">Contact us</a>
+        <a class="nav-link" href="" title="Legal">Legal</a>
+        <a class="nav-link" href="" title="Play online">Play online</a>
+        <a class="nav-link" href="" title="Play on-site">Play on-site</a>
+      </nav>
+    </div>
+    <div class="nav-social">
+      <h2>Follow us on</h2>
+      <nav>
+        <a title="Facebook" href="https://www.facebook.com">Facebook</a>
+        <a title="Instagram" href="https://www.instagram.com">Instagram</a>
+        <a title="Twitter" href="https://www.twitter.com">Twitter</a>
+      </nav>
+    </div>
+  </footer>
+</body>
 </html>
